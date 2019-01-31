@@ -77,7 +77,7 @@ module top
       .rst_ni                 ( rstn_i                ),
 
       .clock_en_i             ( '1                    ),
-      .test_en_i              ( '1                    ),
+      .test_en_i              ( '0                    ),
 
       .boot_addr_i            ( BOOT_ADDR             ),
       .core_id_i              ( 4'h0                  ),
