@@ -49,7 +49,7 @@ install:
  # Build Verilator.
  - wget https://www.veripool.org/ftp/verilator-4.010.tgz
  - tar xfz verilator-4.010.tgz
- - cd verilator-verilator_3_882
+ - cd verilator-verilator_4_010
  - autoconf && ./configure && make
  - export VERILATOR_ROOT=${PWD}
  - export PATH=${VERILATOR_ROOT}/bin:$PATH
