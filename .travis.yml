@@ -15,7 +15,6 @@ addons:
    sources:
     # For gcc-4.8
     - ubuntu-toolchain-r-test
-    - verilator
    packages:
     # Dependencies from tutorial
     - autoconf
@@ -37,6 +36,7 @@ addons:
     # Need gcc-4.8
     - gcc-4.8
     - g++-4.8
+    - verilator
 
 # TODO: Verify that this setting is optimal.
 env:
