@@ -1,5 +1,10 @@
 language: cpp
 
+addons:
+  apt:
+    packages:
+      - verilator
+
 before_script:
  - cd verilator-model
  
