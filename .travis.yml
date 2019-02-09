@@ -37,10 +37,6 @@ addons:
     - gcc-4.8
     - g++-4.8
 
-# No Git operations will be performed. Best to fetch only the latest commit.
-git:
-  depth: 1
-
 # TODO: Verify that this setting is optimal.
 env:
   - JOBS=2
