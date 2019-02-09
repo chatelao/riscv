@@ -56,7 +56,7 @@ install:
  - verilator -V
 
 before_script:
- - cd ../verilator-model
+ - cd ${TRAVIS_BUILD_DIR}/verilator-model
  
 script:
  - make
