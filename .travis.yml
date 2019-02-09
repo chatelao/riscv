@@ -65,7 +65,7 @@ after_install:
 
 before_script:
  - cd ${TRAVIS_BUILD_DIR}/verilator-model
+ - make
  
 script:
- - make
- - make test
+ - testbench
