@@ -56,7 +56,7 @@ install:
  - verilator -V
 
 before_script:
- - cd ~/verilator-model
+ - cd ../verilator-model
  
 script:
  - make
