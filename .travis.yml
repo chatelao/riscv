@@ -47,8 +47,8 @@ notifications:
 
 install:
  # Build Verilator.
- - wget https://github.com/diadatp/verilator/archive/verilator_3_882.tar.gz
- - tar xfz verilator_3_882.tar.gz
+ - wget https://github.com/diadatp/verilator/archive/verilator-4.010.tgz
+ - tar xfz verilator-4.010.tgz
  - cd verilator-verilator_3_882
  - autoconf && ./configure && make
  - export VERILATOR_ROOT=${PWD}
