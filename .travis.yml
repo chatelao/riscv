@@ -7,7 +7,7 @@
 # Prefer use of container-based environment as they start up faster and
 # provide more RAM and CPU cores.
 
-sudo: false
+# sudo: false
 
 # Install the build requirements
 addons:
