@@ -15,6 +15,7 @@ addons:
    sources:
     # For gcc-4.8
     - ubuntu-toolchain-r-test
+    - verilator
    packages:
     # Dependencies from tutorial
     - autoconf
@@ -50,10 +51,11 @@ install:
  - wget https://www.veripool.org/ftp/verilator-4.010.tgz
  - tar xfz verilator-4.010.tgz
  - cd verilator-4.010
- - autoconf && ./configure && make
- - export VERILATOR_ROOT=${PWD}
- - export PATH=${VERILATOR_ROOT}/bin:$PATH
+# - autoconf && ./configure && make
+# - export VERILATOR_ROOT=${PWD}
+# - export PATH=${VERILATOR_ROOT}/bin:$PATH
  - verilator -V
+ - perl --version
 
 before_script:
  - cd ${TRAVIS_BUILD_DIR}/verilator-model
