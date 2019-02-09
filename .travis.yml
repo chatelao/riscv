@@ -48,9 +48,11 @@ notifications:
 
 install:
  # Build Verilator.
- - wget https://www.veripool.org/ftp/verilator-4.010.tgz
- - tar xfz verilator-4.010.tgz
- - cd verilator-4.010
+# - wget https://www.veripool.org/ftp/verilator-4.010.tgz
+# - tar xfz verilator-4.010.tgz
+# - cd verilator-4.010
+ - git clone --branch stable --single-branch http://git.veripool.org/git/verilator
+ - cd git/verilator
  - autoconf
  - ./configure
  - make
