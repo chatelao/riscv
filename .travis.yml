@@ -36,23 +36,14 @@ addons:
     # Need gcc-4.8
     - gcc-4.8
     - g++-4.8
-#    - verilator
 
-# TODO: Verify that this setting is optimal.
-env:
-  - JOBS=2
-
-# Don't need email notifications for now.
-notifications:
-  email: false
+    # Install doc to pdf conversion
+    - wv
+    - tetex-extra
+    - ghostscript  
 
 install:
- # Build Verilator.
-# - wget https://www.veripool.org/ftp/verilator-4.010.tgz
-# - tar xfz verilator-4.010.tgz
-# - cd verilator-4.010
  - git clone --branch stable --single-branch http://git.veripool.org/git/verilator
- - ls -ltr
  - cd verilator
  - autoconf
  - ./configure
@@ -61,10 +52,15 @@ install:
  - export VERILATOR_ROOT=${PWD}
  - export PATH=${VERILATOR_ROOT}/bin:$PATH
  - verilator -V
- - perl --version
+
+after_install:
+ - cd ${TRAVIS_BUILD_DIR}/doc
+ - wvPDF user_manual.doc user_manual.pdf
+ - ls -ltr
 
 before_script:
  - cd ${TRAVIS_BUILD_DIR}/verilator-model
  
 script:
  - make
+ - make test
