@@ -1,13 +1,22 @@
 language: cpp
 
-addons:
-  apt:
-    packages:
-      - verilator
+# addons:
+#  apt:
+#    packages:
+#      - verilator
+
+install:
+ - git clone http://git.veripool.org/git/verilator
+ - unsetenv VERILATOR_ROOT || true # For csh; ignore error if on bash
+ - unset VERILATOR_ROOT    || true # For bash
+ - cd verilator
+ - autoconf        # Create ./configure script
+ - ./configure
+ - make
+ - make install
 
 before_script:
  - cd verilator-model
  
 script:
  - make
- 
