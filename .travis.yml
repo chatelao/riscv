@@ -52,7 +52,8 @@ install:
 # - tar xfz verilator-4.010.tgz
 # - cd verilator-4.010
  - git clone --branch stable --single-branch http://git.veripool.org/git/verilator
- - cd git/verilator
+ - ls -ltr
+ - cd verilator
  - autoconf
  - ./configure
  - make
