@@ -36,7 +36,7 @@ addons:
     # Need gcc-4.8
     - gcc-4.8
     - g++-4.8
-    - verilator
+#    - verilator
 
 # TODO: Verify that this setting is optimal.
 env:
@@ -51,9 +51,12 @@ install:
  - wget https://www.veripool.org/ftp/verilator-4.010.tgz
  - tar xfz verilator-4.010.tgz
  - cd verilator-4.010
-# - autoconf && ./configure && make
-# - export VERILATOR_ROOT=${PWD}
-# - export PATH=${VERILATOR_ROOT}/bin:$PATH
+ - autoconf
+ - ./configure
+ - make
+ - sudo make install
+ - export VERILATOR_ROOT=${PWD}
+ - export PATH=${VERILATOR_ROOT}/bin:$PATH
  - verilator -V
  - perl --version
 
