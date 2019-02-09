@@ -1,1 +1,8 @@
-language: c
+language: cpp
+
+before_script:
+ - cd verilator-model
+ 
+script:
+ - make
+ 
