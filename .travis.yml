@@ -7,7 +7,8 @@
 # Prefer use of container-based environment as they start up faster and
 # provide more RAM and CPU cores.
 
-sudo: true
+dist: bionic
+# sudo: true
 
 # Install the build requirements
 addons:
@@ -38,6 +39,9 @@ addons:
     - g++-4.8
 
     # Install doc to pdf conversion
+    - verilator
+
+    # Install doc to pdf conversion
     - wv
     - texlive-base
     - texlive-latex-base
@@ -46,14 +50,14 @@ addons:
     - cups-pdf
 
 install:
- - git clone --branch stable --single-branch http://git.veripool.org/git/verilator
- - cd verilator
- - autoconf
- - ./configure
- - make
- - sudo make install
- - export VERILATOR_ROOT=${PWD}
- - export PATH=${VERILATOR_ROOT}/bin:$PATH
+ # - git clone --branch stable --single-branch http://git.veripool.org/git/verilator
+ # - cd verilator
+ # - autoconf
+ # - ./configure
+ # - make
+ # - sudo make install
+ # - export VERILATOR_ROOT=${PWD}
+ # - export PATH=${VERILATOR_ROOT}/bin:$PATH
  - verilator -V
 
 after_install:
