@@ -17,6 +17,7 @@ addons:
    sources:
     # For gcc-4.8
     - ubuntu-toolchain-r-test
+    - sourceline: 'deb http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse'
    packages:
     # Dependencies from tutorial
     - autoconf
