@@ -7,7 +7,7 @@
 # Prefer use of container-based environment as they start up faster and
 # provide more RAM and CPU cores.
 
-dist: xenial
+dist: cosmic
 # sudo: true
 
 # Install the build requirements
