@@ -7,12 +7,13 @@
 # Prefer use of container-based environment as they start up faster and
 # provide more RAM and CPU cores.
 
-dist: bionic
+dist: xenial
 # sudo: true
 
 # Install the build requirements
 addons:
   apt:
+   update: true
    sources:
     # For gcc-4.8
     - ubuntu-toolchain-r-test
