@@ -57,16 +57,17 @@ install:
  - export PATH=${VERILATOR_ROOT}/bin:$PATH
  - verilator -V
 
-after_install:
- - cd ${TRAVIS_BUILD_DIR}/doc
- - wvPDF user_manual.doc user_manual.pdf
- - ls -ltr
- # - oowriter -pt pdf user_manual.doc
- # - ls -ltr
-
 before_script:
  - cd ${TRAVIS_BUILD_DIR}/verilator-model
  - make
  
 script:
  - ./testbench
+
+after_success:
+ - cd ${TRAVIS_BUILD_DIR}/doc
+ - wvPDF user_manual.doc user_manual.pdf
+ - ls -ltr
+ # - oowriter -pt pdf user_manual.doc
+ # - ls -ltr
+
