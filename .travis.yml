@@ -39,13 +39,10 @@ addons:
     - g++-4.8
 
     # Install doc to pdf conversion
-    - verilator
-
-    # Install doc to pdf conversion
-#    - wv
-#    - texlive-base
-#    - texlive-latex-base
-#    - ghostscript
+   - wv
+   - texlive-base
+   - texlive-latex-base
+   - ghostscript
     
 #    - cups-pdf
 
@@ -60,10 +57,10 @@ install:
  - export PATH=${VERILATOR_ROOT}/bin:$PATH
  - verilator -V
 
-# after_install:
- # - cd ${TRAVIS_BUILD_DIR}/doc
- # - wvPDF user_manual.doc user_manual.pdf
- # - ls -ltr
+after_install:
+ - cd ${TRAVIS_BUILD_DIR}/doc
+ - wvPDF user_manual.doc user_manual.pdf
+ - ls -ltr
  # - oowriter -pt pdf user_manual.doc
  # - ls -ltr
 
