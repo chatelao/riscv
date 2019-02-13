@@ -7,17 +7,15 @@
 # Prefer use of container-based environment as they start up faster and
 # provide more RAM and CPU cores.
 
-dist: xenial
-# sudo: true
+dist: trusty
+sudo: true
 
 # Install the build requirements
 addons:
   apt:
-   update: true
    sources:
     # For gcc-4.8
     - ubuntu-toolchain-r-test
-    - sourceline: 'deb http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse'
    packages:
     # Dependencies from tutorial
     - autoconf
@@ -44,34 +42,34 @@ addons:
     - verilator
 
     # Install doc to pdf conversion
-    - wv
-    - texlive-base
-    - texlive-latex-base
-    - ghostscript
+#    - wv
+#    - texlive-base
+#    - texlive-latex-base
+#    - ghostscript
     
-    - cups-pdf
+#    - cups-pdf
 
 install:
- # - git clone --branch stable --single-branch http://git.veripool.org/git/verilator
- # - cd verilator
- # - autoconf
- # - ./configure
- # - make
- # - sudo make install
- # - export VERILATOR_ROOT=${PWD}
- # - export PATH=${VERILATOR_ROOT}/bin:$PATH
+ - git clone --branch stable --single-branch http://git.veripool.org/git/verilator
+ - cd verilator
+ - autoconf
+ - ./configure
+ - make
+ - sudo make install
+ - export VERILATOR_ROOT=${PWD}
+ - export PATH=${VERILATOR_ROOT}/bin:$PATH
  - verilator -V
 
-after_install:
- - cd ${TRAVIS_BUILD_DIR}/doc
- - wvPDF user_manual.doc user_manual.pdf
- - ls -ltr
- - oowriter -pt pdf user_manual.doc
- - ls -ltr
+# after_install:
+ # - cd ${TRAVIS_BUILD_DIR}/doc
+ # - wvPDF user_manual.doc user_manual.pdf
+ # - ls -ltr
+ # - oowriter -pt pdf user_manual.doc
+ # - ls -ltr
 
 before_script:
  - cd ${TRAVIS_BUILD_DIR}/verilator-model
  - make
  
 script:
- - testbench
+ - ./testbench
