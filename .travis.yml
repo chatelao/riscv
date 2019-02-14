@@ -37,15 +37,12 @@ addons:
     # Need gcc-4.8
     - gcc-4.8
     - g++-4.8
-
     # Install doc to pdf conversion
-   - wv
-   - texlive-base
-   - texlive-latex-base
-   - ghostscript
+    - wv
+    - texlive-base
+    - texlive-latex-base
+    - ghostscript
     
-#    - cups-pdf
-
 install:
  - git clone --branch stable --single-branch http://git.veripool.org/git/verilator
  - cd verilator
@@ -64,9 +61,9 @@ before_script:
 script:
  - ./testbench
 
-- cd ${TRAVIS_BUILD_DIR}/doc
- - wvPDF user_manual.doc user_manual.pdf
- - ls -ltr
- # - oowriter -pt pdf user_manual.doc
+# after_install:	after_install:
+ # - cd ${TRAVIS_BUILD_DIR}/doc	 - cd ${TRAVIS_BUILD_DIR}/doc
+ # - wvPDF user_manual.doc user_manual.pdf	 - wvPDF user_manual.doc user_manual.pdf
+ # - ls -ltr	 - ls -ltr
+ # - oowriter -pt pdf user_manual.doc	 # - oowriter -pt pdf user_manual.doc
  # - ls -ltr
-
