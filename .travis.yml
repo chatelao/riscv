@@ -64,7 +64,7 @@ before_script:
 script:
  - ./testbench
 
-after_success:
+# after_success:
  - cd ${TRAVIS_BUILD_DIR}/doc
  - wvPDF user_manual.doc user_manual.pdf
  - ls -ltr
