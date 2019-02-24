@@ -20,7 +20,7 @@
 VERILATOR = verilator
 VDIR = obj_dir
 CPPFLAGS = -I$(VDIR) `pkg-config --cflags verilator`
-CXXFLAGS = -Wall -Werror -std=c++11 -Wno-aligned-new
+CXXFLAGS = -Wall -Werror -std=c++11 -Wno-aligned-new -pg
 CXX = g++
 LD = g++
 
