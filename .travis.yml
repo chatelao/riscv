@@ -60,7 +60,9 @@ before_script:
  - make
  
 script:
- - gprof ./testbench
+ - ./testbench
+ - ls
+ - gprof testbench gmon.out
 
 after_success:
  - cd ${TRAVIS_BUILD_DIR}/doc
