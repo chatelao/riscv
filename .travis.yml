@@ -21,12 +21,12 @@ addons:
     - autoconf
     - automake
     - autotools-dev
+    - binutils
     - curl
     - libmpc-dev
     - libmpfr-dev
     - libgmp-dev
     - gawk
-    - gprof
     - build-essential
     - bison
     - flex
