@@ -20,7 +20,7 @@
 VERILATOR = verilator
 VDIR = obj_dir
 CPPFLAGS = -I$(VDIR) `pkg-config --cflags verilator`
-CXXFLAGS = -Wall -Werror -std=c++11 -Wno-aligned-new
+CXXFLAGS = -Wall -Werror -std=c++11 -Wno-aligned-new -pg
 CXX = g++
 LD = g++
 
@@ -102,7 +102,7 @@ $(VDIR):
 	mkdir -p $@
 
 $(VMK): $(VSRC)
-	verilator -O3 -CFLAGS "-O3 -g3 -pg -std=gnu++11" \
+	verilator -O3 -CFLAGS "-O3 -g3 -std=gnu++11" \
                   -Wno-CASEINCOMPLETE -Wno-LITENDIAN -Wno-UNOPT \
 	          -Wno-UNOPTFLAT -Wno-WIDTH -Wno-fatal --top-module top \
 	          --Mdir $(VDIR) --trace -DPULP_FPGA_EMUL -cc \
