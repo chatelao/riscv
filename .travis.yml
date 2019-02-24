@@ -26,6 +26,7 @@ addons:
     - libmpfr-dev
     - libgmp-dev
     - gawk
+    - gprof
     - build-essential
     - bison
     - flex
@@ -59,7 +60,7 @@ before_script:
  - make
  
 script:
- - ./testbench
+ - gprof ./testbench
 
 after_success:
  - cd ${TRAVIS_BUILD_DIR}/doc
