@@ -21,8 +21,7 @@ addons:
     - autoconf
     - automake
     - autotools-dev
-    - binutils
-    - curl
+   - curl
     - libmpc-dev
     - libmpfr-dev
     - libgmp-dev
@@ -38,6 +37,7 @@ addons:
     # Need gcc-4.8
     - gcc-4.8
     - g++-4.8
+
     # Install doc to pdf conversion
     - wv
     - texlive-base
@@ -61,8 +61,6 @@ before_script:
  
 script:
  - ./testbench
- - ls
- - gprof testbench gmon.out
 
 after_success:
  - cd ${TRAVIS_BUILD_DIR}/doc
