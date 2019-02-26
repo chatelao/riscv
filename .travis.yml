@@ -21,7 +21,7 @@ addons:
     - autoconf
     - automake
     - autotools-dev
-   - curl
+    - curl
     - libmpc-dev
     - libmpfr-dev
     - libgmp-dev
